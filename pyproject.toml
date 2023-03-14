@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "build", "cython", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+zip-safe = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[project]
+name = "cytut"
+dynamic = ["version", "optional-dependencies"]
+keywords = []
+description = "cython tutorial"
+requires-python = ">=3.8"
+readme = "README.md"
+dependencies = ["cython", "numpy"]
+license = {text = "proprietary"}
+
+[project.urls]
+homepage="https://github.com/FigureTechnologies/cytut"
+
+[tool.setuptools.dynamic]
+version = {attr = "cytut.__version__"}

@@ -1,6 +1,6 @@
 from os.path import join
 from pathlib import Path
-from setuptools import Extension, find_packages, setup
+from setuptools import Extension, setup
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 import numpy as np
@@ -29,11 +29,6 @@ for name, data in ext_data.items():
 
 
 setup(
-    name="cytut",
-    version="0.0.1",
-    package_dir={"": "src"},
     ext_modules=cythonize(extensions, compiler_directives={"language_level": "3"}),
-    packages=find_packages(),
-    install_requires=["cython"],
-    cmdclass=cmdclass,
+    cmdclass=cmdclass
 )
