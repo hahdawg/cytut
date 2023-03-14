@@ -1,7 +1,7 @@
 import numpy as np
 import pyximport
 
-pyximport.install(setup_args={"include_dirs": np.get_include()})
+pyximport.install(setup_args={"include_dirs": np.get_include()}, language_level=3, reload_support=True)
 from cytut import lib  # noqa
 
 
